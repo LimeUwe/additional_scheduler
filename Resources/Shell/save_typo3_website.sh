@@ -140,6 +140,7 @@ then
 	path_localconf='typo3conf/LocalConfiguration.php'
 	typo_db_username=$(grep "'username' => *" $path_localconf | sed -e "s/\s*'username'\s*=>\s*'\(.*\)'\s*,/\1/");
 	typo_db_password=$(grep "'password' => *" $path_localconf | sed -e "s/\s*'password'\s*=>\s*'\(.*\)'\s*,/\1/");
+	typo_db_port=$(grep "'port' => *" $path_localconf | sed -e "s/\s*'port'\s*=>\s*'\(.*\)'\s*,/\1/");
 	typo_db_host=$(grep "'host' => *" $path_localconf | sed -e "s/\s*'host'\s*=>\s*'\(.*\)'\s*,/\1/");
 	typo_db=$(grep "'database' => *" $path_localconf | sed -e "s/\s*'database'\s*=>\s*'\(.*\)'\s*,/\1/");
 else
@@ -252,8 +253,8 @@ echo
 echo "-----------------------------------------------------------------------"
 echo "Dump the DB $typo_db..."
 echo "-----------------------------------------------------------------------"
-mysqldump -d -h$typo_db_host -u$typo_db_username -p$typo_db_password $typo_db > $filenamesql
-mysqldump -nt $ignoretableslist -h$typo_db_host -u$typo_db_username -p$typo_db_password $typo_db >> $filenamesql
+mysqldump -d -h$typo_db_host -P$typo_db_port -u$typo_db_username -p$typo_db_password $typo_db > $filenamesql
+mysqldump -nt $ignoretableslist -h$typo_db_host -P$typo_db_port -u$typo_db_username -p$typo_db_password $typo_db >> $filenamesql
 
 if [ $dbonly = 1 ]
 then
