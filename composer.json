@@ -1,17 +1,66 @@
 {
-  "name": "limeuwe/additionalscheduler",
-  "type": "typo3-cms-extension",
-  "description": "Useful scheduler tasks",
-  "version": "1.2.2",
-  "license": [
-    "GPL-2.0+"
-  ],
-  "require": {
-        "typo3/cms": "^6.2|^7.6"
-  },
-  "autoload": {
-    "psr-4": {
-            "Sng\\Additionalscheduler\\": "Classes/"
-    }
-  }
+	"repositories": [
+		{ "type": "composer", "url": "https://composer.typo3.org" },
+		{ "type": "vcs", "url": "https://git@github.com/cobwebch/linkhandler.git" },
+		{ "type": "vcs", "url": "https://git@github.com/LimeUwe/additional_scheduler.git" }
+	],
+	"name": "lf/hertie-school-typo3-cms-distribution",
+	"description" : "LF TYPO3 CMS Distribution",
+	"license": "GPL-2.0+",
+	"authors": [
+		{
+			"name": "Lime Flavour",
+			"email": "info@limeflavour.com",
+			"role": "Developer"
+		}
+	],
+	"config": {
+		"vendor-dir": "Packages/Libraries",
+		"bin-dir": "bin",
+		"secure-http": false
+	},
+	"require": {
+		"typo3/cms": "^7.6,<8.0",
+		"typo3-ter/realurl": "^2.0.14",
+		"gridelementsteam/gridelements": "^7.0.5",
+		"typo3-ter/additional-reports":"^3.0.9",
+		"typo3-ter/sm-charsethelper": "^2.0.1",
+		"typo3-ter/static-info-tables": "^6.3.10",
+		"typo3-ter/static-info-tables-de": "^6.4.0",
+		"typo3-ter/t3adminer": "^7.0.8",
+		"typo3-ter/vhs": "^3.0.1",
+		"typo3-ter/lfeditor": "^3.3.2",
+		"cobweb/linkhandler": "^3.1.3",
+		"typo3-ter/cs-seo": "^1.7.0",
+		"typo3-ter/min": "^1.0.0",
+		"LimeUwe/additional-scheduler" : "^1.2.2",
+		"namelesscoder/asynchronous-reference-indexing": "^1.0.1"
+	},
+	"require-dev": {
+		"typo3-ter/extension-builder": "^7.6"
+	},
+	"extra": {
+		"typo3/cms": {
+			"cms-package-dir": "vendor/typo3/cms",
+			"web-dir" : ""
+		}
+	},
+	"autoload": {
+        "classmap": [
+	        "typo3conf/ext/lf_people_directory/Classes",
+	        "typo3conf/ext/lf_content_feed/Classes",
+	        "typo3conf/ext/lf_events/Classes",
+	        "typo3conf/ext/lf_publication_search/Classes",
+	        "typo3conf/ext/lf_course_directory/Classes"
+        ],
+		"psr-4": {
+			"Lf\\LfBase\\": "typo3conf/ext/lf_base/Classes",
+			"Lf\\LfCe\\": "typo3conf/ext/lf_ce/Classes",
+			"Lf\\LfPeopleDirectory\\": "typo3conf/ext/lf_people_directory/Classes",
+			"Lf\\LfProjectDirectory\\": "typo3conf/ext/lf_project_directory/Classes",
+			"Lf\\LfEvents\\": "typo3conf/ext/lf_events/Classes",
+			"Lf\\LfNavigation\\": "typo3conf/ext/lf_navigation/Classes",
+			"Lf\\LfCourseDirectory\\": "typo3conf/ext/lf_course_directory/Classes"
+		}
+	}
 }
