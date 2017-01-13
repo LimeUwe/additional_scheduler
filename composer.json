@@ -1,14 +1,17 @@
 {
-    "name": "limeuwe/addition-scheduler",
-    "type": "typo3-cms-extension",
-    "license": "GPL-2.0+",
-    "preferred-install": "dist",
-    "require": {
+  "name": "limeuwe/additionalscheduler",
+  "type": "typo3-cms-extension",
+  "description": "Useful scheduler tasks",
+  "version": "1.2.2",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "require": {
         "typo3/cms": "^6.2|^7.6"
-    },
-    "autoload": {
-        "psr-4": {
+  },
+  "autoload": {
+    "psr-4": {
             "Sng\\Additionalscheduler\\": "Classes/"
-        }
     }
+  }
 }
